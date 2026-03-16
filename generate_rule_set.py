@@ -20,5 +20,5 @@ print('Start write to file...')
 for key, value in all_ip.items():
     filename = f"ruleJson/geoip_{key}.json"
     with open(filename, 'w', encoding='utf-8') as f:
-        content = {"version": 4, "rules": value}
+        content = {"version": 4, "rules": [{ 'ip_cidr': value }]}
         json.dump(content, f, indent=2)
