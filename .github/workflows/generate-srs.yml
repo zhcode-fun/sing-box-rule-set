@@ -37,6 +37,12 @@ jobs:
         mkdir ruleJson
         mkdir ruleSrs
         python ./generate_rule_set.py
+    - name: Compile to srs
+      run: |
+        for file in ./ruleJson/*.json; do
+          ./sing-box rule-set compile "$file"
+        done
+        mv ./ruleJson/*.srs ./ruleSrs/
     - name: Commit Push
       run: |
         git config user.name "action-bot"
