@@ -26,7 +26,7 @@ jobs:
       run: |
         curl -LO https://github.com/NetworkCats/Merged-IP-Data/releases/latest/download/Merged-IP.mmdb
         curl -LO https://github.com/SagerNet/sing-box/releases/download/v1.13.3/sing-box-1.13.3-linux-amd64.tar.gz
-        tar xvf sing-box.tar.gz
+        tar xvf sing-box-1.13.3-linux-amd64.tar.gz
         mv sing-box-1.13.3-linux-amd64/sing-box ./
         rm -rf sing-box-1.13.3-linux-amd64
         rm -rf *.tar.gz
