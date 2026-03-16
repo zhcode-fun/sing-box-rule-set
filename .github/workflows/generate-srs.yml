@@ -28,6 +28,8 @@ jobs:
         curl -o sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v1.13.3/sing-box-1.13.3-linux-amd64.tar.gz
         tar xvf sing-box.tar.gz
         mv sing-box-1.13.3-linux-amd64/sing-box ./
+        rm -rf sing-box-1.13.3-linux-amd64
+        rm -rf *.tar.gz
     - name: Generate rule-set source
       run: |
         rm -rf ruleJson
