@@ -3,7 +3,7 @@ import json
 
 all_ip = { 'UNKNOWN': [] }
 
-with maxminddb.open_database('.\\Merged-IP.mmdb') as reader:
+with maxminddb.open_database('./Merged-IP.mmdb') as reader:
     for network, data in reader:
         ipstr = str(network)
         if 'country' in data:
