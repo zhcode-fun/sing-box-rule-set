@@ -25,6 +25,7 @@ jobs:
     - name: Download Merged-IP sing-box
       run: |
         curl -LO https://github.com/NetworkCats/Merged-IP-Data/releases/latest/download/Merged-IP.mmdb
+        sha256sum ./Merged-IP.mmdb
         curl -LO https://github.com/SagerNet/sing-box/releases/download/v1.13.3/sing-box-1.13.3-linux-amd64.tar.gz
         tar xvf sing-box-1.13.3-linux-amd64.tar.gz
         mv sing-box-1.13.3-linux-amd64/sing-box ./
@@ -47,6 +48,8 @@ jobs:
       run: |
         git config user.name "action-bot"
         git config user.email "action-bot@github.com"
-        git add .
-        git commit -m "update rule"
-        git push
+        if [ -n "$(git status --porcelain)" ]; then
+          git add .
+          git commit -m "update rule"
+          git push
+        fi
