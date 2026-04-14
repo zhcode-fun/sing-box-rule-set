@@ -35,8 +35,10 @@ jobs:
       run: |
         rm -rf ruleJson
         rm -rf ruleSrs
+        rm -rf ipsetNft
         mkdir ruleJson
         mkdir ruleSrs
+        mkdir ipsetNft
         python ./generate_rule_set.py
     - name: Compile to srs
       run: |
